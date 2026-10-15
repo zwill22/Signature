@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital@0;1&family=Zen+Antique+Soft&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css");
+@import "tailwindcss";
+
+@theme {
+  --purple-dark: #190924;
+  --purple-black: #0e0518;
+  --purple-white: #f8f2ff;
+}
+
+.zen-antique-soft-regular {
+  font-family: "Zen Antique Soft", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.pt-serif-regular {
+  font-family: "PT Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.pt-serif-regular-italic {
+  font-family: "PT Serif", serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+@layer base {
+  :root {
+    background: var(--purple-black);
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+  }
+}
