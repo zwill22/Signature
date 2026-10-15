@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import svg2img from "svg2img";
 
-const dir = "./outlook";
+const dir = ".";
 const files = fs.readdirSync(dir, { withFileTypes: true });
 
 for (const file of files) {
