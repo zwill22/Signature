@@ -6,473 +6,427 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>emailTitle</title>
     <style>
-      div {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        border: 0 solid;
+      #main {
+        margin-block: 0;
+        margin-inline: auto;
+        max-width: 896px;
+      }
+
+      #header {
+        max-width: 896px;
+      }
+
+      #links {
+        min-height: fit-content;
+      }
+
+      #content {
+        height: 100%;
+        max-width: 768px;
+      }
+
+      #footer {
+        margin-inline: auto;
+      }
+
+      .hidden {
+        display: none;
+
+        @media (width >= 640px) {
+          display: block;
+        }
+      }
+
+      .link {
+        color: #f8f2ff;
+        border-width: 1px;
+        border-color: transparent;
+        border-style: solid;
+        border-radius: 2px;
       }
 
       .link:hover {
-        color: oklch(90.2% 0.063 306.703);
+        color: #e9d4ff;
       }
 
       .link:visited {
-        color: oklch(96.2% 0.044 156.743);
+        color: #dcfce7;
       }
 
       .link:visited:hover {
-        color: oklch(90.2% 0.063 306.703);
+        color: #e9d4ff;
       }
 
       .link:focus-visible {
-        border-width: 0px;
-        outline-width: 1px;
-        outline-color: oklch(70.4% 0.191 22.216);
-        box-shadow:
-          0 1px 3px 0 #ffffff,
-          0 1px 2px -1px #ffffff;
+        border-color: #ff6467;
+
+        outline-width: 0px;
+      }
+
+      .picLink {
+        color: #f8f2ff;
+        border-width: 1px;
+        border-color: transparent;
+        border-style: solid;
+        border-radius: 2px;
+      }
+
+      .picLink:hover {
+        border-color: #e9d4ff;
+      }
+
+      .picLink:visited {
+        border-color: #dcfce7;
+      }
+
+      .picLink:visited:hover {
+        border-color: #e9d4ff;
+      }
+
+      .picLink:focus-visible {
+        border-color: #ff6467;
+
+        outline-width: 0px;
       }
     </style>
   </head>
   <body
     style="
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      background-color: #0e0518;
       font-synthesis: none;
       text-rendering: optimizeLegibility;
       font-family: Roboto, Arial, sans-serif;
+      background-color: transparent;
     "
   >
-    <main
+    <table
+      id="main"
+      role="presentation"
       style="
-        display: flex;
-        box-sizing: border-box;
-        flex-direction: column;
-        margin-block: 0;
-        margin-inline: auto;
-        max-width: 896px;
         padding-inline: 8px;
-        padding-block: 16px;
-        background-color: #f8f2ff1a;
+        background-color: #190924;
         min-height: 100vh;
+        max-width: 100vw;
+
+        border-width: 0px 2px;
+        border-style: solid;
+        border-color: #f8f2ff33;
       "
     >
-      <header
-        style="
-          box-sizing: border-box;
-          margin: 0;
-          padding: 0;
-          border: 0 solid;
-          display: flex;
-          min-width: fit-content;
-          max-width: 896px;
-          min-height: 186px;
-          padding: 8px;
-          color: #f8f2ff;
-          justify-content: space-between;
-          background-image: linear-gradient(to right, #0e0518, #190924);
-          border-radius: 16px;
-        "
-      >
-        <div
-          style="display: flex; flex-direction: column; justify-content: center"
-        >
-          <img
-            src="https://raw.githubusercontent.com/zwill22/website/refs/heads/main/public/logo.svg"
-            width="170"
-            height="179"
-            alt="Logo"
-          />
-        </div>
+      <tr>
+        <td style="padding: 8px">
+          <table
+            id="header"
+            role="presentation"
+            style="
+              width: 100%;
+              min-height: 200px;
+              min-width: fit-content;
+              padding: 8px;
+              color: #f8f2ff;
+              background-color: #0e0518;
+              border-radius: 16px;
+              border: 1px solid;
+              border-color: #f8f2ff33;
+            "
+          >
+            <tr>
+              <td style="min-width: 0">
+                <img
+                  src="https://raw.githubusercontent.com/zwill22/website/refs/heads/main/public/logo.svg"
+                  width="170"
+                  height="179"
+                  alt="Logo"
+                  class="hidden"
+                />
+              </td>
 
-        <div
-          style="
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 8px;
-            text-align: left;
-            text-wrap: nowrap;
-          "
-        >
-          <h1
-            style="
-              font-family: serif;
-              font-weight: 400;
-              font-style: normal;
-              font-size: 36px;
-              line-height: 1.2;
-              margin: 4px;
-            "
-          >
-            Zack M Williams PhD
-          </h1>
-          <div style="padding-block: 8px">
-            <h2
-              style="
-                font-size: 20px;
-                line-height: 1.5;
-                margin: auto;
+              <td style="width: 100%; padding-inline: 12px">
+                <table role="presentation">
+                  <tr>
+                    <td>
+                      <h1
+                        style="
+                          font-family: serif;
+                          font-weight: 400;
+                          font-style: normal;
+                          font-size: 36px;
+                          line-height: 1.2;
+                          margin: 4px;
+                        "
+                      >
+                        Zack M Williams PhD
+                      </h1>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <h2
+                        style="
+                          font-size: 20px;
+                          line-height: 1.5;
+                          font-family: serif;
+                          font-weight: 400;
+                          font-style: italic;
 
-                font-family: serif;
-                font-weight: 400;
-                font-style: italic;
-              "
-            >
-              Scientist
-            </h2>
-            <h2
-              style="
-                font-size: 20px;
-                line-height: 1.5;
-                margin: auto;
+                          margin-inline: 4px;
+                          margin-block: 0px;
+                        "
+                      >
+                        Scientist
+                      </h2>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <h2
+                        style="
+                          font-size: 20px;
+                          line-height: 1.5;
 
-                font-family: serif;
-                font-weight: 400;
-                font-style: italic;
-              "
-            >
-              Software Developer
-            </h2>
-          </div>
-        </div>
+                          font-family: serif;
+                          font-weight: 400;
+                          font-style: italic;
+                          margin-inline: 4px;
+                          margin-block: 0px;
+                        "
+                      >
+                        Software Developer
+                      </h2>
+                    </td>
+                  </tr>
+                </table>
+              </td>
 
-        <div
-          style="
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: end;
-            text-align: right;
-            padding-block: 16px;
-          "
-        >
-          <a
-            style="
-              display: flex;
-              box-sizing: border-box;
-              margin: 0;
-              padding: 0;
-              text-wrap: nowrap;
-              font-size: 14px;
-              line-height: 1.5;
-              font-family: serif;
-              font-weight: 400;
-              font-style: normal;
-              text-decoration: none;
-              color: #f8f2ff;
-            "
-            href="mailto:z.m.will@icloud.com"
-          >
-            <p style="box-sizing: border-box; margin: 0">z.m.will@icloud.com</p>
-            <img
-              src="https://raw.githubusercontent.com/zwill22/Signature/refs/heads/main/markdown/envelope.png"
-              width="16"
-              height="16"
-              alt="Logo"
-              style="
-                display: block;
-                margin-block: auto;
-                margin-inline: 4px;
-                padding: 0;
-              "
-            />
-          </a>
-          <a
-            style="
-              box-sizing: border-box;
-              display: flex;
-              flex-direction: row;
-              text-wrap: nowrap;
-              font-size: 14px;
-              line-height: 1.5;
-              font-family: serif;
-              font-weight: 400;
-              font-style: normal;
-              text-decoration: none;
-              color: #f8f2ff;
-              padding: 0;
-            "
-            href="https://www.linkedin.com/in/zmwill"
-          >
-            <p
-              style="
-                box-sizing: border-box;
-                margin-inline: 0;
-                margin-block: auto;
-              "
-            >
-              linkedin.com/in/zmwill
-            </p>
-            <img
-              src="https://raw.githubusercontent.com/zwill22/Signature/refs/heads/main/markdown/linkedin.png"
-              width="16"
-              height="16"
-              alt="Logo"
-              style="
-                box-sizing: border-box;
-                margin-block: auto;
-                margin-inline: 4px;
-                padding: 0;
-                border: 0 solid;
-              "
-            />
-          </a>
-          <a
-            style="
-              display: flex;
-              text-wrap: nowrap;
-              font-size: 14px;
-              line-height: 1.5;
-              font-family: serif;
-              font-weight: 400;
-              font-style: normal;
-              text-decoration: none;
-              color: #f8f2ff;
-            "
-            href="https://www.github.com/zwill22"
-          >
-            <p style="text-align: right; box-sizing: border-box; margin: 0">
-              github.com/zwill22
-            </p>
-            <img
-              src="https://raw.githubusercontent.com/zwill22/Signature/refs/heads/main/markdown/github.png"
-              width="16"
-              height="16"
-              alt="Logo"
-              style="
-                display: block;
-                margin-block: auto;
-                margin-inline: 4px;
-                padding: 0;
-              "
-            />
-          </a>
-          <a
-            style="
-              display: flex;
-              justify-content: end;
-              text-wrap: nowrap;
-              font-size: 14px;
-              line-height: 1.5;
-              font-family: serif;
-              font-weight: 400;
-              font-style: normal;
-              text-decoration: none;
-              color: #f8f2ff;
-            "
-            href="tel:07000000000"
-          >
-            <p style="text-align: right; box-sizing: border-box; margin: 0">
-              +44 7900 000000
-            </p>
-            <img
-              src="https://raw.githubusercontent.com/zwill22/Signature/refs/heads/main/markdown/phone.png"
-              width="16"
-              height="16"
-              alt="Logo"
-              style="
-                display: block;
-                margin-block: auto;
-                margin-inline: 4px;
-                padding: 0;
-              "
-            />
-          </a>
-          <a
-            style="
-              display: flex;
-              text-wrap: nowrap;
-              font-size: 14px;
-              line-height: 1.5;
-              font-family: serif;
-              font-weight: 400;
-              font-style: normal;
-              text-decoration: none;
-              color: #f8f2ff;
-            "
-            href="https://www.zmwill.uk"
-          >
-            <p style="text-align: right; box-sizing: border-box; margin: 0">
-              zmwill.uk
-            </p>
-            <img
-              src="https://raw.githubusercontent.com/zwill22/Signature/refs/heads/main/markdown/globe.png"
-              width="16"
-              height="16"
-              alt="Logo"
-              style="
-                display: block;
-                margin-block: auto;
-                margin-inline: 4px;
-                padding: 0;
-              "
-            />
-          </a>
-        </div>
-      </header>
-      <div
-        style="
-          flex: 1;
+              <td style="height: 100%">
+                <table id="links" style="height: 100%" role="presentation">
+                  <tr>
+                    <td style="text-align: right">
+                      <a
+                        style="
+                          text-wrap: nowrap;
+                          font-size: 14px;
+                          line-height: 1.5;
+                          font-family: serif;
+                          font-weight: 400;
+                          font-style: normal;
+                          text-decoration: none;
+                        "
+                        class="link"
+                        href="mailto:z.m.will@icloud.com"
+                        >z.m.will@icloud.com</a
+                      >
+                    </td>
+                    <td>
+                      <img
+                        src="https://raw.githubusercontent.com/zwill22/Signature/refs/heads/main/markdown/envelope.png"
+                        width="16"
+                        height="16"
+                        alt="Logo"
+                        style="display: block"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: right">
+                      <a
+                        style="
+                          text-wrap: nowrap;
+                          font-size: 14px;
+                          line-height: 1.5;
+                          font-family: serif;
+                          font-weight: 400;
+                          font-style: normal;
+                          text-decoration: none;
+                        "
+                        class="link"
+                        href="https://linkedin.com/in/zmwill"
+                        >linkedin.com/in/zmwill</a
+                      >
+                    </td>
+                    <td>
+                      <img
+                        src="https://raw.githubusercontent.com/zwill22/Signature/refs/heads/main/markdown/linkedin.png"
+                        width="16"
+                        height="16"
+                        alt="Logo"
+                        style="display: block"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: right">
+                      <a
+                        style="
+                          text-wrap: nowrap;
+                          font-size: 14px;
+                          line-height: 1.5;
+                          font-family: serif;
+                          font-weight: 400;
+                          font-style: normal;
+                          text-decoration: none;
+                        "
+                        class="link"
+                        href="https://www.github.com/zwill22"
+                        >github.com/zwill22</a
+                      >
+                    </td>
+                    <td>
+                      <img
+                        src="https://raw.githubusercontent.com/zwill22/Signature/refs/heads/main/markdown/github.png"
+                        width="16"
+                        height="16"
+                        alt="Logo"
+                        style="display: block"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: right">
+                      <a
+                        style="
+                          text-wrap: nowrap;
+                          font-size: 14px;
+                          line-height: 1.5;
+                          font-family: serif;
+                          font-weight: 400;
+                          font-style: normal;
+                          text-decoration: none;
+                        "
+                        class="link"
+                        href="tel:+447900000000"
+                        >+44 7900 000000</a
+                      >
+                    </td>
+                    <td>
+                      <img
+                        src="https://raw.githubusercontent.com/zwill22/Signature/refs/heads/main/markdown/phone.png"
+                        width="16"
+                        height="16"
+                        alt="Logo"
+                        style="display: block"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: right">
+                      <a
+                        style="
+                          text-wrap: nowrap;
+                          font-size: 14px;
+                          line-height: 1.5;
+                          font-family: serif;
+                          font-weight: 400;
+                          font-style: normal;
+                          text-decoration: none;
+                        "
+                        class="link"
+                        href="https://www.zmwill.uk"
+                        >zmwill.uk
+                      </a>
+                    </td>
+                    <td>
+                      <img
+                        src="https://raw.githubusercontent.com/zwill22/Signature/refs/heads/main/markdown/globe.png"
+                        width="16"
+                        height="16"
+                        alt="Logo"
+                        style="display: block"
+                      />
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
 
-          background-color: #f8f2ffe6;
-          width: 100%;
-          min-height: 100%;
-          max-width: 768px;
-          border-radius: 12px;
-          margin-inline: auto;
-          margin-block: 24px;
-          padding: 24px;
-        "
-      >
-        Insert text here!
-      </div>
-      <footer
-        style="
-          box-sizing: border-box;
-          margin: 0;
-          padding: 0;
-          border: 0 solid;
-          display: flex;
-          justify-content: end;
-          margin-inline: auto;
-        "
-      >
-        <div
-          style="
-            display: inline;
-            color: #f8f2ff4d;
-            padding: 8px;
-            font-size: 14px;
-            margin: 0;
-            box-sizing: border-box;
-          "
-        >
-          <a
+      <tr>
+        <td style="padding-block: 8px; padding-inline: 16px; height: 100%">
+          <table
+            id="content"
             style="
-              display: inline;
-              text-wrap: nowrap;
-              font-size: 14px;
-              line-height: 1.5;
-              font-family: serif;
-              font-weight: 400;
-              font-style: normal;
-              text-decoration: none;
-              color: #f8f2ff;
+              width: 100%;
+              height: 100%;
+              background-color: #f8f2ffe6;
+              border-radius: 24px;
+
+              border: 2px solid;
+              border-color: #dcfce780;
             "
-            href="https://www.linkedin.com/in/zmwill"
+            role="presentation"
           >
-            <img
-              src="https://raw.githubusercontent.com/zwill22/Signature/refs/heads/main/markdown/linkedin.png"
-              width="16"
-              height="16"
-              alt="Logo"
-              style="
-                display: inline;
-                margin-block: auto;
-                margin-inline: 4px;
-                padding: 0;
-              "
-            />
-          </a>
-          <a
-            style="
-              display: inline;
-              text-wrap: nowrap;
-              font-size: 14px;
-              line-height: 1.5;
-              font-family: serif;
-              font-weight: 400;
-              font-style: normal;
-              text-decoration: none;
-              color: #f8f2ff;
-            "
-            href="https://www.github.com/zwill22"
-          >
-            <img
-              src="https://raw.githubusercontent.com/zwill22/Signature/refs/heads/main/markdown/github.png"
-              width="14"
-              height="14"
-              alt="Logo"
-              style="
-                display: inline;
-                margin-block: auto;
-                margin-inline: 4px;
-                padding: 0;
-              "
-            />
-          </a>
-          <a
-            style="
-              display: inline;
-              text-wrap: nowrap;
-              font-size: 14px;
-              line-height: 1.5;
-              font-family: serif;
-              font-weight: 400;
-              font-style: normal;
-              text-decoration: none;
-              color: #f8f2ff;
-            "
-            href="https://zmwill.uk"
-          >
-            <img
-              src="https://raw.githubusercontent.com/zwill22/Signature/refs/heads/main/markdown/globe.png"
-              width="14"
-              height="14"
-              alt="Logo"
-              style="
-                display: inline;
-                margin-block: auto;
-                margin-inline: 4px;
-                padding: 0;
-              "
-            />
-          </a>
-        </div>
-        <div
-          style="
-            display: flex;
-            margin: 0;
-            color: #f8f2ff4d;
-            padding: 8px;
-            font-size: 14px;
-            line-height: 1.5;
-          "
-        >
-          |
-        </div>
-        <div
-          style="
-            display: flex;
-            color: #f8f2ff4d;
-            padding: 8px;
-            font-size: 14px;
-            line-height: 1.5;
-          "
-        >
-          <img
-            src="https://raw.githubusercontent.com/zwill22/Signature/refs/heads/main/markdown/copyright.png"
-            width="16"
-            height="16"
-            alt="Logo"
-            style="
-              display: flex;
-              margin-block: 0;
-              margin-inline: 4px;
-              padding: 0;
-            "
-          />
-          <p
-            style="display: flex; margin: 0; padding: 0; box-sizing: border-box"
-          >
-            Date Z M Williams
-          </p>
-        </div>
-      </footer>
-    </main>
+            <tr>
+              <td style="vertical-align: top; padding: 12px; height: 100%">
+                Insert text here!
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="padding-block: 8px; padding-inline: 15%">
+          <table role="presentation" id="footer">
+            <tr>
+              <td style="padding: 4px; vertical-align: middle">
+                <a
+                  class="picLink"
+                  style="display: block"
+                  href="https://www.linkedin.com/in/zmwill"
+                >
+                  <img
+                    src="https://raw.githubusercontent.com/zwill22/Signature/refs/heads/main/markdown/linkedin.png"
+                    width="16"
+                    height="16"
+                    alt="Logo"
+                    style="display: block"
+                  />
+                </a>
+              </td>
+
+              <td style="padding: 4px; vertical-align: middle">
+                <a
+                  class="picLink"
+                  style="display: block"
+                  href="https://www.github.com/zwill22"
+                >
+                  <img
+                    src="https://raw.githubusercontent.com/zwill22/Signature/refs/heads/main/markdown/github.png"
+                    width="16"
+                    height="16"
+                    alt="Logo"
+                    style="display: block"
+                  />
+                </a>
+              </td>
+
+              <td style="padding: 4px; vertical-align: middle">
+                <a
+                  class="picLink"
+                  style="display: block"
+                  href="https://zmwill.uk"
+                >
+                  <img
+                    src="https://raw.githubusercontent.com/zwill22/Signature/refs/heads/main/markdown/globe.png"
+                    width="16"
+                    height="16"
+                    alt="Logo"
+                    style="display: block"
+                  />
+                </a>
+              </td>
+              <td
+                style="color: #f8f2ff4d; padding: 4px; vertical-align: middle"
+              >
+                © Date Z M Williams
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
   </body>
 </html>
