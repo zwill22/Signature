@@ -15,6 +15,7 @@ import {
   Markdown,
 } from "react-email";
 import clsx from "clsx";
+import { ReactNode } from "react";
 
 interface EmailProps {
   title?: string;
@@ -268,7 +269,7 @@ function Footer() {
     </Container>
   );
 }
-export default function Email(props: EmailProps) {
+export default function Email(props: EmailProps): ReactNode {
   const preview = props.previewText ?? previewText;
   return (
     <Html>
