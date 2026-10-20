@@ -2,16 +2,19 @@
   "name": "email",
   "version": "1.1.1",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "email build",
     "dev": "email dev",
-    "export": "email export"
+    "export": "email export",
+    "convert": "node tools/convert.js"
   },
   "dependencies": {
     "clsx": "^2.1.1",
     "react": "19.2.4",
     "react-dom": "19.2.4",
-    "react-email": "6.11.3"
+    "react-email": "6.11.3",
+    "svg2img": "1.0.0-beta.2"
   },
   "devDependencies": {
     "@react-email/ui": "6.11.3",
