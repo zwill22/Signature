@@ -1,9 +1,29 @@
-# Email signature
+# Email template
 
-This repo represents my mission to get a nice email signature/template for professional purposes.
-There are several subpackages reprenting the multiple approaches taken:
+![PNPM][pnpm-badge]
+![React][react-badge]
+![TailwindCSS][tailwind-badge]
+![Markdown][markdown-badge]
+![TypeScript][typescript-badge]
 
-1. React-TS: A full template using React, TypeScript, TailwindCSS, BootStrap Icons, etc.
-2. Markdown: A basic markdown signature featuring only simple icons and minimal formattting
-3. HTML: A pure HTML/CSS version which replicates the formatting of the React version without TypeScript or TailwindCSS, but with custom fonts and Bootstrap Icons
-4. Basic: A pure HTML version with inline CSS, no custom fonts, no Bootstrap icons
+This repo includes email templates for HTML emails created using [React Email][react-email].
+React Email is a library of unstyled components for creating emails using React, TailwindCSS, and TypeScript.
+An email created using this library may be compiled into HTML using the provided `render` method.
+
+## Developing
+
+Running
+
+```sh
+pnpm run dev
+```
+
+starts the React Email development environment.
+Inside which, any email in the `emails` directory can be viewed, or sent to an address.
+
+[pnpm-badge]: https://img.shields.io/badge/pnpm-%234a4a4a.svg?style=for-the-badge&logo=pnpm&logoColor=f69220
+[react-badge]: https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB
+[tailwind-badge]: https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white
+[markdown-badge]: https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white
+[typescript-badge]: https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white
+[react-email]: https://react.email/
