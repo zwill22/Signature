@@ -99,17 +99,22 @@ function LinkRow({ href, text, img, alt }: LinkProps) {
     <Button
       href={href}
       className={clsx(
-        "w-full my-1 text-nowrap text-right text-sm text-purple-white",
+        "w-full min-w-fit my-1 text-right text-sm text-purple-white",
       )}
     >
-      <Text className="inline-block my-auto py-auto">{text}</Text>
-      <Img
-        src={img}
-        width="12"
-        height="12"
-        alt={alt}
-        className="inline-block px-2 my-auto py-auto"
-      />
+      <Row cellSpacing={6}>
+        <Column>
+          <Text className="text-nowrap inline-block my-auto">{text}</Text>
+        </Column>
+        <Column>
+          <Img
+            src={img}
+            width="12"
+            height="12"
+            alt={alt}
+          />
+        </Column>
+      </Row>
     </Button>
   );
 }
@@ -118,7 +123,7 @@ function LinkColumn(props: EmailProps) {
   const phoneNumber = props.phoneNumber ?? "+447900000000";
 
   return (
-    <Column className="min-w-fit m-2 p-2">
+    <Column className="w-fit m-2 p-2">
       <LinkRow
         href="mailto:z.m.will@icloud.com"
         text="z.m.will@icloud.com"
@@ -160,7 +165,7 @@ function Header(props: EmailProps) {
   return (
     <Container
       className={clsx(
-        "w-full rounded-2xl border-white/10 border-2",
+        "w-full rounded-2xl border-white/10 border-2 max-w-2xl",
         "my-3 mx-auto text-purple-white bg-purple-black",
         "font-serif",
       )}
@@ -191,7 +196,7 @@ function Content(props: EmailProps) {
   return (
     <Container
       className={clsx(
-        "bg-purple-white rounded-xl mx-auto my-6 px-6 w-full min-h-full",
+        "bg-purple-white rounded-xl mx-auto my-6 px-6 w-full min-h-full max-w-2xl",
       )}
     >
       <Markdown
@@ -289,7 +294,7 @@ export default function Email(props: EmailProps): ReactNode {
           },
         }}
       >
-        <Body className="mx-auto h-screen bg-purple-dark font-sans">
+        <Body className="mx-auto my-auto bg-purple-dark font-sans">
           <Preview>{preview}</Preview>
           <Header {...props} />
           <Content {...props} />
