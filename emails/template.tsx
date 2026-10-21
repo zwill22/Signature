@@ -4,7 +4,6 @@ import {
   Head,
   Body,
   Container,
-  Tailwind,
   Row,
   Column,
   Img,
@@ -13,6 +12,7 @@ import {
   Link,
   Preview,
   Markdown,
+  Tailwind,
 } from "react-email";
 import clsx from "clsx";
 import { ReactNode } from "react";
@@ -60,7 +60,7 @@ const previewContent = `
 
   I can also include a [link to my website][website], and pictures:
 
-  ![GitHub logo][GitHubLogo]
+  ![GitHub logo][logo]
 
   ### Quotes
 
@@ -91,7 +91,7 @@ const previewContent = `
   Markdown is handy for emails!
 
   [website]: https://www.zmwill.uk "My fabulous site"
-  [GitHubLogo]: https://raw.githubusercontent.com/zwill22/Signature/refs/heads/main/markdown/github.png
+  [logo]: https://raw.githubusercontent.com/zwill22/website/refs/heads/main/public/logo.svg
 `;
 
 function LinkRow({ href, text, img, alt }: LinkProps) {
@@ -99,20 +99,17 @@ function LinkRow({ href, text, img, alt }: LinkProps) {
     <Button
       href={href}
       className={clsx(
-        "w-full min-w-fit my-1 text-right text-sm text-purple-white",
+        "w-full min-w-fit my-1 text-right text-sm text-nowrap text-purple-white light:text-purple-white dark:text-purple-white p-0 m-0",
       )}
     >
-      <Row cellSpacing={6}>
+      <Row cellSpacing={4} className="h-fit w-full">
         <Column>
-          <Text className="text-nowrap inline-block my-auto">{text}</Text>
+          <Text className="block h-fit min-w-fit w-full text-nowrap m-0 p-0">
+            {text}
+          </Text>
         </Column>
         <Column>
-          <Img
-            src={img}
-            width="12"
-            height="12"
-            alt={alt}
-          />
+          <Img src={img} width="14" height="14" alt={alt} className="my-auto" />
         </Column>
       </Row>
     </Button>
@@ -123,38 +120,38 @@ function LinkColumn(props: EmailProps) {
   const phoneNumber = props.phoneNumber ?? "+447900000000";
 
   return (
-    <Column className="w-fit m-2 p-2">
+    <Column className="h-fit">
       <LinkRow
         href="mailto:z.m.will@icloud.com"
         text="z.m.will@icloud.com"
-        img="https://raw.githubusercontent.com/zwill22/Signature/refs/heads/main/markdown/envelope.png"
+        img="https://raw.githubusercontent.com/zwill22/Signature/refs/heads/main/images/envelope.png"
         alt="Envelope Icon"
       />
       <LinkRow
         href="https://linkedin.com/in/zmwill"
         text="linkedin.com/in/zmwill"
-        img="https://raw.githubusercontent.com/zwill22/Signature/refs/heads/main/markdown/linkedin.png"
+        img="https://raw.githubusercontent.com/zwill22/Signature/refs/heads/main/images/linkedin.png"
         alt="LinkedIn Logo"
       />
 
       <LinkRow
         href="https://www.github.com/zwill22"
         text="github.com/zwill22"
-        img="https://raw.githubusercontent.com/zwill22/Signature/refs/heads/main/markdown/github.png"
+        img="https://raw.githubusercontent.com/zwill22/Signature/refs/heads/main/images/github.png"
         alt="GitHub Logo"
       />
 
       <LinkRow
         href={`tel:${phoneNumber}`}
         text={phoneNumber}
-        img="https://raw.githubusercontent.com/zwill22/Signature/refs/heads/main/markdown/phone.png"
+        img="https://raw.githubusercontent.com/zwill22/Signature/refs/heads/main/images/phone.png"
         alt="Phone Icon"
       />
 
       <LinkRow
         href="https://www.zmwill.uk"
         text="zmwill.uk"
-        img="https://raw.githubusercontent.com/zwill22/Signature/refs/heads/main/markdown/globe.png"
+        img="https://raw.githubusercontent.com/zwill22/Signature/refs/heads/main/images/globe.png"
         alt="Internet Globe Icon"
       />
     </Column>
@@ -165,12 +162,12 @@ function Header(props: EmailProps) {
   return (
     <Container
       className={clsx(
-        "w-full rounded-2xl border-white/10 border-2 max-w-2xl",
-        "my-3 mx-auto text-purple-white bg-purple-black",
-        "font-serif",
+        "w-full rounded-2xl border-2 border-purple-white/40 light:border-purple-white/40 dark:border-purple-white/40 max-w-2xl",
+        "mx-auto my-3 px-2 text-purple-white light:text-purple-white dark:text-purple-white",
+        "bg-purple-black light:bg-purple-black dark:bg-purple-black font-serif",
       )}
     >
-      <Row>
+      <Row cellSpacing={2}>
         {/* <Column>
           <Img
             src="https://raw.githubusercontent.com/zwill22/website/refs/heads/main/public/logo.svg"
@@ -180,7 +177,7 @@ function Header(props: EmailProps) {
           />
         </Column> */}
 
-        <Column className="min-w-fit w-full m-2 p-2">
+        <Column>
           <Heading className="m-0 p-0">Zack M Williams PhD</Heading>
           <Text className="m-0 p-0">Scientist</Text>
           <Text className="m-0 p-0">Software Developer</Text>
@@ -196,7 +193,9 @@ function Content(props: EmailProps) {
   return (
     <Container
       className={clsx(
-        "bg-purple-white rounded-xl mx-auto my-6 px-6 w-full min-h-full max-w-2xl",
+        "w-full max-w-2xl min-h-full border-2 rounded-xl",
+        "border-purple-black light:border-purple-black dark:border-purple-black",
+        "bg-purple-bright text-purple-black light:text-purple-black dark:text-purple-white mx-auto my-3 px-3",
       )}
     >
       <Markdown
@@ -233,7 +232,7 @@ function Content(props: EmailProps) {
 
 function PicLink({ href, img, alt }: LinkProps) {
   return (
-    <Link href={href}>
+    <Link href={href} className="h-fit p-0 m-0">
       <Img src={img} alt={alt} width={16} height={16} />
     </Link>
   );
@@ -242,31 +241,31 @@ function PicLink({ href, img, alt }: LinkProps) {
 function Footer() {
   const copyright = `${new Date().getFullYear()} Z M Williams`;
   return (
-    <Container className="p-2 font-serif">
-      <Row className="w-fit" cellSpacing={12}>
+    <Container className="p-0 font-serif">
+      <Row className="w-fit p-0 my-2" cellSpacing={12}>
         <Column>
           <PicLink
             href="https://www.linkedin.com/in/zmwill"
-            img="https://raw.githubusercontent.com/zwill22/Signature/refs/heads/main/markdown/linkedin.png"
+            img="https://raw.githubusercontent.com/zwill22/Signature/refs/heads/main/images/linkedin.png"
             alt="LinkedIn Logo"
           />
         </Column>
         <Column>
           <PicLink
             href="https://www.github.com/zwill22"
-            img="https://raw.githubusercontent.com/zwill22/Signature/refs/heads/main/markdown/github.png"
+            img="https://raw.githubusercontent.com/zwill22/Signature/refs/heads/main/images/github.png"
             alt="GitHub Logo"
           />
         </Column>
         <Column>
           <PicLink
             href="https://zmwill.uk"
-            img="https://raw.githubusercontent.com/zwill22/Signature/refs/heads/main/markdown/globe.png"
+            img="https://raw.githubusercontent.com/zwill22/Signature/refs/heads/main/images/globe.png"
             alt="Internet Globe"
           />
         </Column>
         <Column>
-          <Text className="block text-purple-white/50 my-auto">
+          <Text className="block text-purple-white/50 light:text-purple-white/50 dark:text-purple-white/50 m-0">
             © {copyright}
           </Text>
         </Column>
@@ -278,9 +277,6 @@ export default function Email(props: EmailProps): ReactNode {
   const preview = props.previewText ?? previewText;
   return (
     <Html>
-      <Head>
-        <title>My email title</title>
-      </Head>
       <Tailwind
         config={{
           theme: {
@@ -289,12 +285,17 @@ export default function Email(props: EmailProps): ReactNode {
                 "purple-white": "#f8f2ff",
                 "purple-dark": "#190924",
                 "purple-black": "#0e0518",
+                "purple-bright": "#F1FAE7",
               },
             },
           },
         }}
       >
-        <Body className="mx-auto my-auto bg-purple-dark font-sans">
+        <Head>
+          <title>My email title</title>
+          <style>{`:root { color-scheme: light dark; }`}</style>
+        </Head>
+        <Body className="mx-auto my-auto bg-purple-dark light:bg-purple-dark dark:bg-purple-dark font-sans">
           <Preview>{preview}</Preview>
           <Header {...props} />
           <Content {...props} />
