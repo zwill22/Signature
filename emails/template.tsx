@@ -195,7 +195,7 @@ function Content(props: EmailProps) {
       className={clsx(
         "w-full max-w-2xl min-h-full border-2 rounded-xl",
         "border-purple-black light:border-purple-black dark:border-purple-black",
-        "bg-purple-bright text-purple-black light:text-purple-black dark:text-purple-white mx-auto my-3 px-3",
+        "bg-purple-bright text-purple-black mx-auto my-3 px-3",
       )}
     >
       <Markdown
